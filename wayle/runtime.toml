@@ -6,40 +6,13 @@ font-mono = "Noto Sans Mono"
 scale = 0.8500000238418579
 inset-edge = 0.5
 inset-ends = 0.5
-bg = "#1a1b25"
+bg = "bg-base"
 rounding = "full"
 button-variant = "basic"
 button-rounding = "full"
 
 [[bar.layout]]
-monitor = "eDP-1"
-show = true
-left = [
-    "dashboard",
-    "storage",
-    "cpu",
-    "ram",
-    "notifications",
-    "systray",
-    "updates",
-]
-center = [
-    "clock",
-    "hyprland-workspaces",
-    "cava",
-]
-right = [
-    "network",
-    "bluetooth",
-    "microphone",
-    "volume",
-    "brightness",
-    "battery",
-    "power",
-]
-
-[[bar.layout]]
-monitor = "HDMI-A-1"
+monitor = "*"
 show = true
 left = [
     "dashboard",
