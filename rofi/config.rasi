@@ -1,0 +1,12 @@
+configuration{
+    modi: "drun";
+    icon-theme: "Numix-Circle";
+    font: "JetBrainsMono Nerd Font 14";
+    show-icons: true;
+    terminal: "kitty";
+    display-drun: " ";
+    drun-display-format: "{icon} {name}";
+    border-radius: 10;
+}
+
+@theme "~/.config/rofi/themes/catppuccin-macchiato.rasi"

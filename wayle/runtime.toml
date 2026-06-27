@@ -1,0 +1,179 @@
+[general]
+font-sans = "Noto Sans"
+font-mono = "Noto Sans Mono"
+
+[bar]
+scale = 0.8500000238418579
+inset-edge = 0.5
+inset-ends = 0.5
+bg = "#1a1b25"
+rounding = "full"
+button-variant = "basic"
+button-rounding = "full"
+
+[[bar.layout]]
+monitor = "eDP-1"
+show = true
+left = [
+    "dashboard",
+    "storage",
+    "cpu",
+    "ram",
+    "notifications",
+    "systray",
+    "updates",
+]
+center = [
+    "clock",
+    "hyprland-workspaces",
+    "cava",
+]
+right = [
+    "network",
+    "bluetooth",
+    "microphone",
+    "volume",
+    "brightness",
+    "battery",
+    "power",
+]
+
+[[bar.layout]]
+monitor = "HDMI-A-1"
+show = true
+left = [
+    "dashboard",
+    "storage",
+    "cpu",
+    "ram",
+    "notifications",
+    "systray",
+    "updates",
+]
+center = [
+    "clock",
+    "hyprland-workspaces",
+    "cava",
+]
+right = [
+    "network",
+    "bluetooth",
+    "microphone",
+    "volume",
+    "brightness",
+    "battery",
+    "power",
+]
+
+[styling.palette]
+bg = "#1e2030"
+surface = "#222436"
+elevated = "#2f334d"
+fg = "#c8d3f5"
+fg-muted = "#828bb8"
+primary = "#82aaff"
+red = "#ff757f"
+yellow = "#ffc777"
+green = "#c3e88d"
+blue = "#86e1fc"
+
+[modules.battery]
+border-color = "status-success"
+icon-color = "status-success"
+icon-bg-color = "transparent"
+label-color = "fg-default"
+
+[modules.bluetooth]
+border-color = "accent"
+icon-color = "accent"
+icon-bg-color = "transparent"
+label-color = "fg-default"
+
+[modules.brightness]
+right-click = "pkill hyprsunset || hyprsunset -t 5000"
+scroll-up = "brightnessctl set 5%+"
+scroll-down = "brightnessctl set 5%-"
+
+[modules.cava]
+bars = 23
+direction = "mirror"
+button-bg-color = "transparent"
+left-click = "dropdown:media"
+right-click = "dropdown:audio"
+
+[modules.clock]
+format = "%a %d %b | %I:%M %p"
+label-color = "fg-default"
+
+[modules.cpu]
+poll-interval-ms = 1000
+border-color = "accent"
+icon-color = "accent"
+icon-bg-color = "transparent"
+label-color = "fg-default"
+
+[modules.dashboard]
+border-color = "accent"
+icon-color = "accent"
+icon-bg-color = "accent"
+dropdown-lock-command = "playerctl pause ; hyprlock"
+
+[modules.hyprland-workspaces]
+app-icons-show = true
+
+[modules.microphone]
+border-color = "accent"
+icon-color = "accent"
+icon-bg-color = "transparent"
+label-show = false
+label-color = "accent"
+left-click = "wayle audio input-mute"
+middle-click = ""
+
+[modules.network]
+label-color = "fg-default"
+label-max-length = 18
+
+[modules.notifications]
+popup-max-visible = 10
+popup-margin-x = 6.699999809265137
+popup-margin-y = 4.900000095367432
+
+[modules.power]
+left-click = "wlogout --buttons-per-row 5"
+
+[modules.ram]
+poll-interval-ms = 1000
+format = "{{ used_gib }} GiB"
+
+[modules.storage]
+poll-interval-ms = 60000
+format = "{{ used_gib }} Gib"
+border-color = "accent"
+icon-color = "accent"
+icon-bg-color = "transparent"
+label-color = "fg-default"
+
+[modules.volume]
+border-color = "accent"
+icon-color = "accent"
+icon-bg-color = "transparent"
+label-color = "fg-default"
+right-click = "wayle audio output-mute"
+middle-click = ""
+scroll-up = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ --limit 1"
+scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+dropdown-app-icons = "native"
+
+[modules.weather]
+location = "Ameca"
+
+[wallpaper]
+engine-enabled = false
+transition-type = "any"
+transition-duration = 2.0
+cycling-enabled = true
+cycling-directory = "/home/jonathan-lx/Wallpapers"
+cycling-mode = "shuffle"
+cycling-interval-mins = 5
+cycling-same-image = true
