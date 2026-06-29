@@ -13,7 +13,6 @@ button-variant = "basic"
 button-bg-opacity = 0
 button-label-size = 1.0499999523162842
 button-label-weight = "bold"
-dropdown-opacity = 90
 
 [[bar.layout]]
 monitor = "*"
