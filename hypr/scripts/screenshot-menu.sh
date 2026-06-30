@@ -1,28 +1,68 @@
 #!/bin/bash
 
-opciones="✂️ Zona seleccionada\n🪟 Ventana activa\n🖥️ Pantalla completa"
 output_DIR="$HOME/Screenshots"
+mkdir -p "$output_DIR"
+
+opciones="✂️ Zona seleccionada\n🪟 Ventana activa\n🖥️ Pantalla completa"
 
 seleccion=$(echo -e "$opciones" | rofi -dmenu \
-    -p "  | Captura" \
+    -p "  Captura" \
     -theme-str '
+        @import "~/.config/rofi/colors.rasi"
+
         window {
-            location: center;
-            anchor: center;
-            width: 300px;
-            height: 240px;
-            border-radius: 10px;
-            padding: 10px;
+			width: 324px;
+			height: 216px;
+			border-radius: 10px;
+			background-color: @surface;
+			border: 3px solid;
+			border-color: @elevated;
+		}
+
+		mainbox {
+			orientation: horizontal;
+			children: [ listbox ];
+		}
+
+		listbox {
+			orientation: vertical;
+			children: [ listview ];
+			background-color: @surface;
+			padding: 10px;
+		}
+
+		listview {
+			margin: 0px 0px 0px 0px;
+			columns: 1;
+			lines: 3;
+			spacing: 10px;
+			require-input: false;
+			scrollbar: false;
+			border: 0px;
+		}
+
+		element {
+			background-color: @elevated;
+			padding: 15px;
+			border-radius: 10px;
+		}
+
+        element normal.normal {
+            background-color: @elevated;
+            text-color: @primary;
         }
-        listview {
-            lines: 3;
-            spacing: 2px;
-            scrollbar: false;
-            margin: 0px;
+        
+    		element alternate.normal {
+            background-color: @elevated;
+            text-color: @primary;
         }
-        element {
-            padding: 6px 0px;
-        }
+
+		element selected.normal {
+			background-color: @elevated;
+			text-color: @primary;
+			border: 1px solid;
+			border-color: @primary;
+		}
     ')
 
 case "$seleccion" in
@@ -36,3 +76,4 @@ case "$seleccion" in
         hyprshot -m output -o "$output_DIR"
         ;;
 esac
+
