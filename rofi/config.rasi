@@ -3,7 +3,6 @@ configuration {
     show-icons: true;
     display-drun: " ";
     drun-display-format: "{icon} {name}";
-    animation: "none";
 }
 
 @import "colors.rasi"
