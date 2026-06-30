@@ -12,7 +12,7 @@ window {
     width: 768px;
     height: 432px;
     border-radius: 10px;
-    background-color: transparent;
+    background-color: #a9b1d65E;
     border: 3px solid;
     border-color: @elevated;
 }
@@ -31,7 +31,7 @@ dummy-image {
 listbox {
     orientation: vertical;
     children: [ inputbar, listview ];
-    background-color: #181825E6;
+    background-color: #181825CC;
     border-radius: 0px;
     padding: 20px;
 }
@@ -57,7 +57,7 @@ entry {
 
 listview {
     margin: 20px 0px 0px 0px;
-    columns: 1;
+    columns: 2;
     lines: 6;
     spacing: 10px;
     require-input: false;
@@ -69,7 +69,7 @@ element {
 }
 
 element selected.normal {
-    background-color: #1e1e2eE6;
+    background-color: #1e1e2eCC;
     text-color: @primary;
     border: 1px solid;
     border-color: @primary;
