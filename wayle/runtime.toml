@@ -116,7 +116,8 @@ format = "%A %d %B | %I:%M %p"
 icon-color = "accent"
 
 [modules.hyprland-workspaces]
-min-workspace-count = 5
+min-workspace-count = 10
+monitor-specific = false
 show-special = false
 app-icons-show = true
 
