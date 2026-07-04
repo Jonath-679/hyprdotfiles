@@ -30,15 +30,13 @@ left = [
     "separator",
 ] },
     "cava",
-]
-
-[[bar.layout.center]]
-name = "WORK"
-modules = [
+    { name = "WORK", modules = [
     "separator",
     "hyprland-workspaces",
     "separator",
+] },
 ]
+center = []
 
 [[bar.layout.right]]
 name = "SYSTRY"
@@ -104,7 +102,7 @@ scroll-up = "brightnessctl set 5%+"
 scroll-down = "brightnessctl set 5%-"
 
 [modules.cava]
-bars = 32
+bars = 58
 direction = "mirror"
 button-bg-color = "transparent"
 left-click = "dropdown:media"
