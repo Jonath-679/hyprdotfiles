@@ -93,6 +93,7 @@ label-color = "accent"
 [modules.bluetooth]
 icon-color = "accent"
 label-color = "accent"
+label-max-length = 24
 
 [modules.brightness]
 icon-color = "accent"
@@ -102,13 +103,14 @@ scroll-up = "brightnessctl set 5%+"
 scroll-down = "brightnessctl set 5%-"
 
 [modules.cava]
-bars = 58
+bars = 62
 direction = "mirror"
 button-bg-color = "transparent"
 left-click = "dropdown:media"
 
 [modules.clock]
-format = "%A %d %B | %I:%M %p"
+format = "%A %d %B -- %I:%M %p"
+icon-show = false
 
 [modules.dashboard]
 icon-color = "accent"
@@ -127,9 +129,11 @@ middle-click = ""
 
 [modules.network]
 icon-color = "accent"
+label-max-length = 24
 
 [modules.notifications]
 icon-color = "accent"
+label-show = false
 label-color = "accent"
 popup-position = "top-left"
 popup-margin-x = 3.0
