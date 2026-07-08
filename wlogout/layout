@@ -1,27 +1,31 @@
 {
     "label" : "lock",
     "action" : "playerctl pause ; hyprlock",
-    "text" : "Hyprlock"
+    "text" : "Hyprlock",
+	"keybind" : "h"
 }
 {
     "label" : "suspend",
     "action" : "systemctl suspend",
-    "text" : "Suspend"
+    "text" : "Suspend",
+	"keybind" : "s"
 }
 {
     "label" : "logout",
     "action" : "hyprctl dispatch exit",
-    "text" : "Exit"
+    "text" : "Exit",
+	"keybind" : "e"
 }
 {
     "label" : "shutdown",
     "action" : "systemctl poweroff",
-    "text" : "Poweroff"
+    "text" : "Poweroff",
+	"keybind" : "p"
 }
-
 {
     "label" : "reboot",
     "action" : "systemctl reboot",
-    "text" : "Reboot"
+    "text" : "Reboot",
+	"keybind" : "r"
 }
 
