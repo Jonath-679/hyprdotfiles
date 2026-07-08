@@ -115,9 +115,9 @@ source $ZSH/oh-my-zsh.sh
 # --- ALIAS ---
 alias nano='nano -lmic'
 alias sudo='sudo '
-alias zshrc='nano $HOME/.zshrc'
-alias hyprland.conf='nano $HOME/.config/hypr/hyprland.conf'
-alias kitty.conf='nano $HOME/.config/kitty/kitty.conf'
+alias zshrc='$EDITOR $HOME/.zshrc'
+alias hyprland.conf='$EDITOR $HOME/.config/hypr/hyprland.conf'
+alias kitty.conf='$EDITOR $HOME/.config/kitty/kitty.conf'
 
 # --- DISPLAY MANAGER ---
 if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
@@ -125,7 +125,7 @@ if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
 fi
 
 # --- VARIABLES DE ENTORNO ---
-export EDITOR='nano -lmic'
+export EDITOR='nvim'
 export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # FUNCIONES PERSONALES
