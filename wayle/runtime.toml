@@ -109,7 +109,7 @@ button-bg-color = "transparent"
 left-click = "dropdown:media"
 
 [modules.clock]
-format = "%A %d %B -- %I:%M %p"
+format = "%A %d %B / %I:%M %p"
 icon-show = false
 
 [modules.dashboard]
