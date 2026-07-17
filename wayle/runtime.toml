@@ -114,7 +114,7 @@ icon-show = false
 
 [modules.dashboard]
 icon-color = "accent"
-dropdown-lock-command = "playerctl pause ; hyprlock"
+dropdown-lock-command = "hyprlock"
 
 [modules.hyprland-workspaces]
 min-workspace-count = 10
