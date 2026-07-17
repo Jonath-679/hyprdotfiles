@@ -38,21 +38,22 @@ button:hover {
 
 
 #lock {
-    background-image: url("/usr/share/wlogout/icons/lock.png");
+    background-image: url("icons/lock.png");
 }
 
 #logout {
-    background-image: url("/usr/share/wlogout/icons/logout.png");
+    background-image: url("icons/logout.png");
 }
 
 #suspend {
-    background-image: url("/usr/share/wlogout/icons/suspend.png");
+    background-image: url("icons/suspend.png");
 }
 
 #reboot {
-    background-image: url("/usr/share/wlogout/icons/reboot.png");
+    background-image: url("icons/reboot.png");
 }
 
 #shutdown {
-    background-image: url("/usr/share/wlogout/icons/shutdown.png");
+    background-image: url("icons/shutdown.png");
 }
+
