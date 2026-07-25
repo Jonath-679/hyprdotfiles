@@ -146,9 +146,7 @@ label-max-length = 24
 icon-color = "accent"
 label-show = false
 label-color = "accent"
-popup-position = "top-left"
-popup-margin-x = 3.0
-popup-margin-y = 3.0
+popup-position = "top-center"
 
 [modules.power]
 icon-color = "accent"
