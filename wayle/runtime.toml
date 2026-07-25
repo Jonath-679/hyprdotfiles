@@ -4,8 +4,8 @@ font-mono = "Noto Sans Mono"
 
 [bar]
 scale = 0.800000011920929
-inset-edge = 0.4000000059604645
-inset-ends = 0.800000011920929
+inset-edge = 0.5
+inset-ends = 24.0
 bg = "bg-base"
 background-opacity = 90
 rounding = "sm"
@@ -18,25 +18,27 @@ button-label-weight = "bold"
 monitor = "*"
 show = true
 left = [
-    { name = "POWER", modules = [
+    { name = "D3H", modules = [
     "separator",
-    "power",
-    "separator",
-] },
-    { name = "INFO", modules = [
-    "separator",
-    "notifications",
-    "clock",
+    "dashboard",
     "separator",
 ] },
-    "cava",
     { name = "WORK", modules = [
     "separator",
     "hyprland-workspaces",
     "separator",
 ] },
+    "cava",
 ]
-center = []
+
+[[bar.layout.center]]
+name = "INFO"
+modules = [
+    "separator",
+    "notifications",
+    "clock",
+    "separator",
+]
 
 [[bar.layout.right]]
 name = "SYSTRY"
@@ -62,15 +64,16 @@ modules = [
     "microphone",
     "volume",
     "brightness",
+    "idle-inhibit",
     "battery",
     "separator",
 ]
 
 [[bar.layout.right]]
-name = "D3H"
+name = "POWER"
 modules = [
     "separator",
-    "dashboard",
+    "power",
     "separator",
 ]
 
@@ -92,6 +95,7 @@ label-color = "accent"
 
 [modules.bluetooth]
 icon-color = "accent"
+label-show = false
 label-color = "accent"
 label-max-length = 24
 
@@ -103,7 +107,7 @@ scroll-up = "brightnessctl set 5%+"
 scroll-down = "brightnessctl set 5%-"
 
 [modules.cava]
-bars = 62
+bars = 27
 direction = "mirror"
 button-bg-color = "transparent"
 left-click = "dropdown:media"
@@ -120,7 +124,12 @@ dropdown-lock-command = "hyprlock"
 min-workspace-count = 10
 monitor-specific = false
 show-special = false
-app-icons-show = true
+workspace-padding = 0.699999988079071
+
+[modules.idle-inhibit]
+startup-duration = 0
+icon-color = "accent"
+label-show = false
 
 [modules.microphone]
 icon-color = "accent"
@@ -130,6 +139,7 @@ middle-click = ""
 
 [modules.network]
 icon-color = "accent"
+label-show = false
 label-max-length = 24
 
 [modules.notifications]
