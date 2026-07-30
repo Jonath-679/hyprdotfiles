@@ -19,11 +19,11 @@ hl.workspace_rule({workspace="2", monitor=monitorLaptop})
 hl.workspace_rule({workspace="3", monitor=monitorLaptop})
 hl.workspace_rule({workspace="4", monitor=monitorLaptop})
 hl.workspace_rule({workspace="5", monitor=monitorLaptop})
-hl.workspace_rule({workspace="6", monitor=monitorAcer})
-hl.workspace_rule({workspace="7", monitor=monitorAcer})
-hl.workspace_rule({workspace="8", monitor=monitorAcer})
-hl.workspace_rule({workspace="9", monitor=monitorAcer})
-hl.workspace_rule({workspace="10", monitor=monitorAcer})
+hl.workspace_rule({workspace="6", monitor="HDMI-A-1"})
+hl.workspace_rule({workspace="7", monitor="HDMI-A-1"})
+hl.workspace_rule({workspace="8", monitor="HDMI-A-1"})
+hl.workspace_rule({workspace="9", monitor="HDMI-A-1"})
+hl.workspace_rule({workspace="10", monitor="HDMI-A-1"})
 
 
 --- AUTOSTART (EXEC-ONCE) ---
