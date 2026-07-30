@@ -8,8 +8,9 @@ NEW_ADDR=$(hyprctl activewindow -j | jq -r '.address')
 
 if [[ "$OLD_ADDR" == "$NEW_ADDR" ]]; then
     if [[ "$DIR" == "l" ]]; then
-		hyprctl dispatch "hl.dsp.focus({workspace='r-1'})"
+		hyprctl dispatch "hl.dsp.focus({workspace=-1})"
     elif [[ "$DIR" == "r" ]]; then
-		hyprctl dispatch "hl.dsp.focus({workspace='r+1'})"
+		hyprctl dispatch "hl.dsp.focus({workspace=\"+1\"})"
     fi
 fi
+
