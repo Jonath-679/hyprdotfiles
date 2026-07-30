@@ -190,12 +190,10 @@ hl.bind(mainMod .. " + G", hl.dsp.group.toggle())
 hl.bind(mainMod .. " + tab", hl.dsp.group.next())
 
 --- Cambiar de ventana 
---- hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("~/.config/hypr/scripts/focus_wrap.sh l"))
-hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "l" }))
+hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("~/.config/hypr/scripts/focus_wrap.sh l"))
 hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "d" }))
 hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "u" }))
-hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "r" }))
---- hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("~/.config/hypr/scripts/focus_wrap.sh r"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("~/.config/hypr/scripts/focus_wrap.sh r"))
 
 --- Mover ventana
 --- hl.bind(mainMod .. " + SHIFT + H", hl.dsp.exec_cmd("~/.config/hypr/scripts/move_wrap.sh l"))
