@@ -8,31 +8,25 @@ configuration {
 @import "colors.rasi"
 
 window {
-    width: 768px;
-    height: 432px;
+    width: 512px;
+    height: 288px;
     border-radius: 10px;
     background-color: #a9b1d65E;
-    border: 3px solid;
+    border: 5px solid;
     border-color: @elevated;
 }
 
 mainbox {
     orientation: horizontal;
-    children: [ dummy-image, listbox ];
-}
-
-dummy-image {
-    width: 288px;
-    expand: false;
-    background-color: transparent;
+    children: [ listbox ];
 }
 
 listbox {
     orientation: vertical;
     children: [ inputbar, listview ];
-    background-color: #181825CC;
+    background-color: #181825AB; // 67% opacity
     border-radius: 0px;
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
 }
 
 inputbar {
@@ -55,20 +49,20 @@ entry {
 }
 
 listview {
-    margin: 20px 0px 0px 0px;
-    columns: 2;
-    lines: 6;
+    margin: 17px 0px 0px 0px;
+    columns: 1;
+    lines: 4;
     spacing: 10px;
     require-input: false;
 }
 
 element {
-    padding: 10px;
+    padding: 7px;
     border-radius: 10px;
 }
 
 element selected.normal {
-    background-color: #1e1e2eCC;
+    background-color: #1e1e2eAB; // 67% opacity
     text-color: @primary;
     border: 1px solid;
     border-color: @primary;
