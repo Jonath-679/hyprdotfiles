@@ -68,7 +68,7 @@ hl.config({
         disable_splash_rendering = true,
         force_default_wallpaper = 0,
         font_family = "Noto Sans",
-		disable_xdg_env_checks = false
+		disable_watchdog_warning = true
     },
 	
 	--- Layouts
