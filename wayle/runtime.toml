@@ -7,7 +7,7 @@ scale = 0.800000011920929
 inset-edge = 0.5
 inset-ends = 24.0
 bg = "bg-base"
-background-opacity = 90
+border-location = "left"
 rounding = "sm"
 button-variant = "basic"
 button-bg-opacity = 0
@@ -118,6 +118,7 @@ icon-show = false
 
 [modules.dashboard]
 icon-color = "accent"
+left-click = 'hyprctl dispatch "hl.plugin.hymission.toggle"'
 dropdown-lock-command = "hyprlock"
 
 [modules.hyprland-workspaces]
@@ -162,6 +163,9 @@ scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
 
 [modules.weather]
 location = "Ameca"
+
+[osd]
+monitor = "HDMI-A-1"
 
 [wallpaper]
 engine-enabled = false
