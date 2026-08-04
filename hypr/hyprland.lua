@@ -13,3 +13,5 @@ require("~/.config/hypr/modules/animations.lua")
 require("~/.config/hypr/modules/rules.lua")
 require("~/.config/hypr/modules/binds.lua")
 
+require("~/.config/hypr/plugins/hymission.lua")
+
