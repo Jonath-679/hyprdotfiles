@@ -3,6 +3,13 @@
 --- Binds
 hl.bind("SUPER + TAB", hl.plugin.hymission.toggle)
 
+-- Gestures
+hl.plugin.hymission.gesture({
+    fingers = 3,
+    direction = "vertical",
+    action = "toggle",
+})
+
 --- Config
 hl.config({
     plugin = {
