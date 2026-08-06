@@ -12,8 +12,9 @@ hl.on("hyprland.start", function()
 	
     --- Apps 
 	hl.exec_cmd("kitty" .. " --class pocket-terminal")
-    hl.exec_cmd("sleep 2.0 && wayle panel start")
-    hl.exec_cmd("sleep 3.0 && megasync")
+    hl.exec_cmd("sleep 3.5 && wayle panel start")
+    hl.exec_cmd("sleep 4.5 && megasync")
     hl.exec_cmd("hypridle")
+
 end)
 

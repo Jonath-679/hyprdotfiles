@@ -1,7 +1,7 @@
 #!/bin/bash
 
-awww clear 000000
-sleep 0.5
+sleep 2.0
+-- awww clear 000000
 
 WALLPAPER=$(grep '^wallpaper =' ~/.config/waypaper/config.ini | cut -d '=' -f 2 | xargs)
 WALLPAPER="${WALLPAPER/#\~/$HOME}"
@@ -13,7 +13,7 @@ if [ -f "$WALLPAPER" ]; then
     awww img "$WALLPAPER" \
         --transition-type center \
         --transition-fps 60 \
-        --transition-duration 1.5 \
+        --transition-duration 2.0 \
         --transition-step 60
 else
     echo "Error: Bash sigue sin encontrar la imagen en esa ruta exacta."
