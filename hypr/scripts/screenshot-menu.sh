@@ -7,6 +7,10 @@ opciones="✂️ Zona seleccionada\n🪟 Ventana activa\n🖥️ Pantalla comple
 
 seleccion=$(echo -e "$opciones" | rofi -dmenu \
     -p "  Captura" \
+	-kb-row-down "Down,j" \
+    -kb-row-up "Up,k" \
+    -kb-accept-entry "Return,l" \
+    -kb-cancel "Escape,h" \
     -theme-str '
         @import "~/.config/rofi/colors.rasi"
 
