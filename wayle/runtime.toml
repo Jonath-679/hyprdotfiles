@@ -118,6 +118,7 @@ icon-show = false
 
 [modules.dashboard]
 icon-color = "accent"
+left-click = 'hyprctl dispatch "hl.plugin.hymission.toggle"'
 dropdown-lock-command = "hyprlock"
 
 [modules.hyprland-workspaces]
