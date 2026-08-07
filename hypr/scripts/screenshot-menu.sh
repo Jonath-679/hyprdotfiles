@@ -3,7 +3,7 @@
 output_DIR="$HOME/Screenshots"
 mkdir -p "$output_DIR"
 
-opciones="✂️ Zona seleccionada\n🪟 Ventana activa\n🖥️ Pantalla completa"
+opciones="🖥️ Pantalla-completa\n🪟 Ventana-activa\n✂️ Zona-seleccionada"
 
 seleccion=$(echo -e "$opciones" | rofi -dmenu \
     -p "  Captura" \
@@ -70,14 +70,14 @@ seleccion=$(echo -e "$opciones" | rofi -dmenu \
     ')
 
 case "$seleccion" in
-    *"Zona seleccionada"*)
-        hyprshot -m region -o "$output_DIR"
+	 *"Pantalla-completa"*)
+        hyprshot -m output -o "$output_DIR"
         ;;
-    *"Ventana activa"*)
+	*"Ventana-activa"*)
         hyprshot -m window -o "$output_DIR"
         ;;
-    *"Pantalla completa"*)
-        hyprshot -m output -o "$output_DIR"
+	*"Zona-seleccionada"*)
+        hyprshot -m region -o "$output_DIR"
         ;;
 esac
 
