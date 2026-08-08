@@ -116,8 +116,6 @@ source $ZSH/oh-my-zsh.sh
 alias nano='nano -lmic'
 alias sudo='sudo '
 alias zshrc='$EDITOR $HOME/.zshrc'
-alias hyprland.conf='$EDITOR $HOME/.config/hypr/hyprland.conf'
-alias kitty.conf='$EDITOR $HOME/.config/kitty/kitty.conf'
 
 # --- DISPLAY MANAGER ---
 if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
