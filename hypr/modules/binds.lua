@@ -70,15 +70,15 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"), {locked=true})
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), {locked=true})
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), {locked=true})
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"), {locked=true})
-
---- Brightness
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 5%+"), {locked=true, repeating=true})
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), {locked=true, repeating=true})
 
 --- Hyprshot (with rofi selector)
 hl.bind("Print", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/screenshot-menu.sh"))
 
+--- Script: monitor-menu.sh
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("~/.config/hypr/scripts/monitor-menu.sh"))
+
 --- Extra
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + T", hl.dsp.layout("togglesplit")) -- dwindle only
 

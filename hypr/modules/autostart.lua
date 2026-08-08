@@ -6,7 +6,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent")
 	hl.exec_cmd("hyprpm reload")
 	
-	--- Wallpaper effect at startup + rofi backgroundi
+	--- Wallpaper effect at startup + rofi background
     hl.exec_cmd("awww-daemon --no-cache")
     hl.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/awww-boot.sh")
     hl.exec_cmd("bash -c 'WALLPAPER=$(sed -n \"s/^wallpaper = //p\" ~/.config/waypaper/config.ini | sed \"s|~|$HOME|\"); ~/.config/rofi/cache.sh \"$WALLPAPER\"'") -- background rofi
