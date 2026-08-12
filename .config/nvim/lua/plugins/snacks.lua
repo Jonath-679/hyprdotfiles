@@ -8,7 +8,7 @@ return {
 		-- bigfile = { enabled = true },
 		-- dashboard = { enabled = true },
 		explorer = { enabled = true },
-		-- indent = { enabled = true },
+		indent = { enabled = true },
 		-- input = { enabled = true },
 		picker = {enabled=true, sources={explorer={layout={cycle=false}}}},
 		-- notifier = { enabled = true },
