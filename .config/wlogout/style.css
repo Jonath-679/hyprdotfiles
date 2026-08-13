@@ -4,11 +4,9 @@
     font-weight: bold;
 }
 
-
 window {
     background-color: rgba(17, 17, 27, 0.90);
 }
-
 
 button {
     color: #a9b1d6;   
@@ -19,23 +17,23 @@ button {
     padding: 10px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 25%;
+    background-size: 20%;
     transition: all 0.15s ease-in-out;
+    min-width: 200px;
 }
-
 
 button:focus {
 	background-color: #1e1e2e;
     box-shadow: none;
 }
 
-
 button:hover {
     background-color: #2D3148;
     border: 2px solid #a9b1d6;
     box-shadow: 0px 0px 20px rgba(45, 49, 72, 0.80);
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
-
 
 #lock {
     background-image: url("icons/lock.png");
@@ -43,6 +41,7 @@ button:hover {
 
 #logout {
     background-image: url("icons/logout.png");
+    background-position: 55% center;
 }
 
 #suspend {

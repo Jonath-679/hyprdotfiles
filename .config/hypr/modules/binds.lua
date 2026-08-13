@@ -6,7 +6,7 @@ local terminal = "kitty"
 --- General
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("wlogout --buttons-per-row 5"))
+hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("wlogout -b 5 -T 350 -B 350"))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("hyprctl dispatch \"hl.dsp.window.resize({x=1280, y=720})\"; hyprctl dispatch \"hl.dispatch(hl.dsp.window.center())\"", {float=true}))
 hl.bind(mainMod .. " + Space", hl.dsp.window.float({action="toggle"}))
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.window.fullscreen({mode="fullscreen"}))

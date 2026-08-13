@@ -151,7 +151,7 @@ popup-position = "top-center"
 
 [modules.power]
 icon-color = "accent"
-left-click = "wlogout --buttons-per-row 5"
+left-click = "wlogout -b 5 -T 350 -B 350"
 
 [modules.volume]
 icon-color = "accent"
