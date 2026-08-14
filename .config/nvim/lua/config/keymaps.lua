@@ -12,7 +12,7 @@ vim.keymap.set("n", "<C-PageDown>", ":bn<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<C-PageUp>", ":bp<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<C-l>", ":bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<C-h>", ":bprevious<CR>", { desc = "Previous buffer" })
-vim.keymap.set("n", "<leader><BS>", ":bd<CR>", { desc = "Close buffer" })
+vim.keymap.set("n", "<leader><BS>", function() Snacks.bufdelete() end, { desc = "Close buffer" })
 vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save buffer" })
 
 -- Navigation 
@@ -61,7 +61,6 @@ vim.keymap.set("n", "<leader>cr", function()
     local ext = vim.fn.expand("%:e") -- File extension (c, cpp, etc.)
     local run_dir = dir .. "/.RUN" -- Hidden folder
     local out = run_dir .. "/" .. name -- Final executable path
-
     -- Determine compiler and standard based on file extension
     local compiler = ""
     local std = ""
@@ -75,20 +74,16 @@ vim.keymap.set("n", "<leader>cr", function()
         vim.notify("Not a C or C++ file!", vim.log.levels.WARN)
         return
     end
-
     -- Create the .RUN folder if it doesn't exist
     vim.fn.mkdir(run_dir, "p")
-
     -- Escape paths for safety (in case there are spaces in the folder names)
     local esc_src = vim.fn.shellescape(src)
     local esc_out = vim.fn.shellescape(out)
-
     -- Build command dynamically
     local cmd = string.format(
         "%s %s -O2 -Wall -Wextra -o %s %s && echo '--- Running ---' && %s",
         compiler, std, esc_out, esc_src, esc_out
     )
-
     -- Open the bottom terminal and execute
     vim.cmd("botright 15split | term " .. cmd)
     vim.cmd("startinsert")
