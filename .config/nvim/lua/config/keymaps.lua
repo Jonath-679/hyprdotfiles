@@ -44,13 +44,6 @@ vim.keymap.set("v", ">", ">gv", { desc = "Indent right and keep selection" })
 vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 
--- LSP | Language Server Protocol
-vim.keymap.set("n", "gh", vim.lsp.buf.hover, { desc = "LSP Hover information" })
-vim.keymap.set("n", "gH", vim.diagnostic.open_float, { desc = "LSP Open diagnostic float" })
-vim.keymap.set("n", "gr", vim.lsp.buf.rename, { desc = "LSP Rename symbol" })
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP Go to definition" })
-vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, { desc = "LSP Go to type definition" })
-
 -- C/C++: Compile & run (<leader>cr)
 vim.keymap.set("n", "<leader>cr", function()
     -- Save and get paths 
