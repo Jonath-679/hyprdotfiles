@@ -11,11 +11,11 @@ return {
                 close_command = function(n) Snacks.bufdelete(n) end,
                 right_mouse_command = function(n) Snacks.bufdelete(n) end,
 				mode = "buffers", --buffers, tabs
-                separator_style = "think",
+                separator_style = {"", ""},
 				always_show_bufferline = true,
 				offsets = {
 					{
-						filetype = "snacks_layout_box", -- <- el más común en Snacks
+						filetype = "snacks_layout_box",
 						text = "--------------------------------------",
 						highlight = "Directory",
 						text_aligh = "center",

@@ -3,11 +3,12 @@ vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.wrap = false
 vim.opt.termguicolors = true
--- vim.opt.signcolumn = "yes:1"
+vim.opt.signcolumn = "yes:1"
 -- vim.opt.pumheight = 10 -- max completion popup height
 -- vim.opt.colorcolumn = "150" -- visual line-length guide
 -- vim.opt.scrolloff = 5
 -- vim.opt.sidescrolloff = 5
+-- vim.opt.guicursor = "n:block-blinkon0,i-ci-ve:ver25-blinkwait250-blinkoff250-blinkon250"
 
 -- Tabs & indentation 
 vim.opt.expandtab = true
