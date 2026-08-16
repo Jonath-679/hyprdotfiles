@@ -26,8 +26,13 @@ require("lazy").setup({
   spec = {
     -- import your plugins
     { import = "plugins" },
+    { import = "plugins.lsp" }
   },
+  git = { timeout = 3000 }, --5min
+  -- Configure any other settings here. See the documentation for more details.
+  -- colorscheme that will be used when installing plugins.
+  -- install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
-  checker = { enabled = false },
+  checker = { enabled = true },
 })
 
