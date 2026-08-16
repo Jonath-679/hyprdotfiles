@@ -53,6 +53,15 @@ return {
             },
         })
 
+        -- C/C++ 
+        vim.lsp.config("clangd", {
+            cmd = {
+                "clangd",
+                "--background-index",
+                "--header-insertion=never", --iwyu
+            },
+        })
+
         -- :LspStop
         vim.api.nvim_create_user_command("LspStop", function()
             local clients = vim.lsp.get_clients({ bufnr = 0 })
