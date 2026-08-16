@@ -2,12 +2,15 @@
 
 return {
     'saghen/blink.cmp',
-    dependencies = { 'rafamadriz/friendly-snippets' }, -- optional: provides snippets for the snippet source
+    dependencies = {'rafamadriz/friendly-snippets', "L3MON4D3/LuaSnip"}, -- optional: provides snippets for the snippet source
     version = '1.*',
 
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
+        -- Snippets 
+        snippets = { preset = 'luasnip' },
+
         -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
         -- 'super-tab' for mappings similar to vscode (tab to accept)
         -- 'enter' for enter to accept
