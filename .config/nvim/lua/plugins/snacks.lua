@@ -32,9 +32,23 @@ return {
         { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
 
         -- git
-        { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+        { "<leader>gg", function() Snacks.lazygit() end, desc = "Open Lazygit" },
+        { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Open Lazygit Log" },
 
-        -- Terminal 
+        -- Open terminal
+        vim.keymap.set("n", "<leader>t", function()
+            if vim.bo.buftype == "terminal" then
+                vim.cmd("hide")
+                return
+            end
+            local current_dir = vim.fn.expand("%:p:h")
+            if current_dir == "" or vim.fn.isdirectory(current_dir) == 0 then
+                current_dir = vim.fn.getcwd()
+            end
+            Snacks.terminal(nil, { cwd = current_dir, id = "local_term", win = { wo = { winbar = ""}}})
+        end, { desc = "Open Terminal (current_dir)" }),
+
+        -- Toggle terminal
         vim.keymap.set({"n", "t"}, "<C-t>", function()
             if vim.bo.buftype == "terminal" then
                 vim.cmd("hide")
@@ -45,7 +59,7 @@ return {
                 current_dir = vim.fn.getcwd()
             end
             Snacks.terminal(nil, { cwd = current_dir, id = "local_term", win = { wo = { winbar = ""}}})
-        end, { desc = "Toggle Terminal (current_dir)" })
+        end, { desc = "Open Terminal (current_dir)" })
     }
 }
 
