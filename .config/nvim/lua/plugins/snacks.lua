@@ -12,7 +12,7 @@ return {
         explorer = { enabled = true },
         indent = { enabled = true },
         input = { enabled = true },
-        picker = { enabled = true, sources={explorer={layout={cycle=false}}}},
+        picker = { enabled = true, sources={explorer={layout={cycle=false, preview=false}}}},
         notifier = { enabled = true, timeout = 5000 },
         quickfile = { enabled = true },
         scope = { enabled = true },
@@ -49,7 +49,7 @@ return {
         end, { desc = "Open Terminal (current_dir)" }),
 
         -- Toggle terminal
-        vim.keymap.set({"n", "t"}, "<C-t>", function()
+        vim.keymap.set({"n", "t"}, "<C-S-t>", function()
             if vim.bo.buftype == "terminal" then
                 vim.cmd("hide")
                 return
