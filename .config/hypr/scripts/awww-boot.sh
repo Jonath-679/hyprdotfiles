@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sleep 2.0
--- awww clear 000000
+sleep 2.5
+# awww clear 000000
 
 WALLPAPER=$(grep '^wallpaper =' ~/.config/waypaper/config.ini | cut -d '=' -f 2 | xargs)
 WALLPAPER="${WALLPAPER/#\~/$HOME}"
