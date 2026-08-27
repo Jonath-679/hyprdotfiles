@@ -6,7 +6,7 @@ local terminal = "kitty"
 --- General
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("wlogout -b 5 -T 350 -B 350"))
+hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("hyprctl dispatch \"hl.dsp.window.resize({x=1280, y=720})\"; hyprctl dispatch \"hl.dispatch(hl.dsp.window.center())\"", {float=true}))
 hl.bind(mainMod .. " + Space", hl.dsp.window.float({action="toggle"}))
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.window.fullscreen({mode="fullscreen"}))
@@ -52,10 +52,10 @@ hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({workspace="special:magic"}))
 
 --- Resize Window
-hl.bind(mainMod .. " + ALT + H", hl.dsp.window.resize({x=-50, y=0, relative=true}))
-hl.bind(mainMod .. " + ALT + J", hl.dsp.window.resize({x=0, y=50, relative=true}))
-hl.bind(mainMod .. " + ALT + K", hl.dsp.window.resize({x=0, y=-50, relative=true}))
-hl.bind(mainMod .. " + ALT + L", hl.dsp.window.resize({x=50, y=0, relative=true}))
+hl.bind(mainMod .. " + ALT + H", hl.dsp.window.resize({x=-50, y=0, relative=true}), {repeating=true})
+hl.bind(mainMod .. " + ALT + J", hl.dsp.window.resize({x=0, y=50, relative=true}), {repeating=true})
+hl.bind(mainMod .. " + ALT + K", hl.dsp.window.resize({x=0, y=-50, relative=true}), {repeating=true})
+hl.bind(mainMod .. " + ALT + L", hl.dsp.window.resize({x=50, y=0, relative=true}), {repeating=true})
 
 --- Move/Resize Window | MouseScroll
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), {mouse=true})
@@ -72,6 +72,7 @@ hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), {locked=true}
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"), {locked=true})
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 5%+"), {locked=true, repeating=true})
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), {locked=true, repeating=true})
+hl.bind("XF86PowerOff", hl.dsp.exec_cmd("wlogout -b 5 -T 350 -B 350"), { locked = true })
 
 --- Hyprshot (with rofi selector)
 hl.bind("Print", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/screenshot-menu.sh"))
