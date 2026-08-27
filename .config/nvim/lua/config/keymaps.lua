@@ -44,6 +44,25 @@ vim.keymap.set("v", ">", ">gv", { desc = "Indent right and keep selection" })
 vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 
+-- Search library PlatformIO (<leader>ps)
+local wk = require("which-key")
+local icon = { icon = ' ', color = 'orange' }
+wk.add({
+    "<leader>ps",
+    function()
+        vim.ui.input({ prompt = " Search library " }, function(input)
+            if input and input ~= "" then
+                vim.cmd("Piolib " .. input)
+                vim.fn.jobstart({ "pio", "run", "-t", "compiledb" }, {
+                    detach = true,
+                })
+            end
+        end)
+    end,
+    desc = "[S]earch library",
+    icon = icon,
+})
+
 -- C/C++: Compile & run (<leader>cr)
 vim.keymap.set("n", "<leader>cr", function()
     -- Save and get paths 
