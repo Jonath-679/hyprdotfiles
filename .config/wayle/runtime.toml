@@ -4,78 +4,54 @@ font-mono = "Noto Sans Mono"
 
 [bar]
 scale = 0.800000011920929
-inset-edge = 0.5
+inset-edge = 0.6700000166893005
 inset-ends = 24.0
-bg = "bg-base"
-background-opacity = 90
+border-location = "left"
+border-width = 2
 rounding = "sm"
 button-variant = "basic"
 button-bg-opacity = 0
 button-label-size = 1.0499999523162842
 button-label-weight = "bold"
+button-label-padding = 0.8500000238418579
 
 [[bar.layout]]
 monitor = "*"
 show = true
 left = [
-    { name = "D3H", modules = [
-    "separator",
+    { name = "LEFT", modules = [
     "dashboard",
-    "separator",
-] },
-    { name = "WORK", modules = [
-    "separator",
     "hyprland-workspaces",
-    "separator",
 ] },
     "cava",
 ]
-
-[[bar.layout.center]]
-name = "INFO"
-modules = [
+center = [
     "separator",
+    { name = "INFO", modules = [
     "notifications",
     "clock",
-    "separator",
+] },
 ]
 
 [[bar.layout.right]]
-name = "SYSTRY"
-modules = [
-    "separator",
-    "systray",
-    "separator",
-]
+name = "SYSTRAY"
+modules = ["systray"]
 
 [[bar.layout.right]]
-name = "WB"
+name = "RIGHT"
 modules = [
-    "separator",
     "network",
     "bluetooth",
-    "separator",
-]
-
-[[bar.layout.right]]
-name = "I/O"
-modules = [
-    "separator",
     "microphone",
     "volume",
     "brightness",
     "idle-inhibit",
     "battery",
-    "separator",
 ]
 
 [[bar.layout.right]]
 name = "POWER"
-modules = [
-    "separator",
-    "power",
-    "separator",
-]
+modules = ["power"]
 
 [styling.palette]
 bg = "#11111b"
@@ -83,7 +59,7 @@ surface = "#181825"
 elevated = "#1e1e2e"
 fg = "#cdd6f4"
 fg-muted = "#bac2de"
-primary = "#a9b1d6"
+primary = "#b4befe"
 red = "#f38ba8"
 yellow = "#f9e2af"
 green = "#a6e3a1"
@@ -96,8 +72,8 @@ label-color = "accent"
 [modules.bluetooth]
 icon-color = "accent"
 label-show = false
-label-color = "accent"
 label-max-length = 24
+right-click = "blueman-manager"
 
 [modules.brightness]
 icon-color = "accent"
@@ -107,7 +83,7 @@ scroll-up = "brightnessctl set 5%+"
 scroll-down = "brightnessctl set 5%-"
 
 [modules.cava]
-bars = 27
+bars = 28
 direction = "mirror"
 button-bg-color = "transparent"
 left-click = "dropdown:media"
@@ -139,14 +115,12 @@ right-click = "wayle audio input-mute"
 middle-click = ""
 
 [modules.network]
-icon-color = "accent"
 label-show = false
 label-max-length = 24
 
 [modules.notifications]
 icon-color = "accent"
 label-show = false
-label-color = "accent"
 popup-position = "top-center"
 
 [modules.power]
@@ -163,6 +137,9 @@ scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
 
 [modules.weather]
 location = "Ameca"
+
+[osd]
+monitor = "HDMI-A-1"
 
 [wallpaper]
 engine-enabled = false
