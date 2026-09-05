@@ -12,7 +12,7 @@ return {
         explorer = { enabled = true },
         indent = { enabled = true },
         input = { enabled = true },
-        picker = { enabled = true, sources={explorer={layout={cycle=false, preview=false}}}},
+        picker = { enabled = true, sources={explorer={layout={cycle=false}, hidden=true}}},
         notifier = { enabled = true, timeout = 5000 },
         quickfile = { enabled = true },
         scope = { enabled = true },
@@ -35,8 +35,8 @@ return {
         { "<leader>gg", function() Snacks.lazygit() end, desc = "Open Lazygit" },
         { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Open Lazygit Log" },
 
-        -- Open terminal
-        vim.keymap.set("n", "<leader>t", function()
+        -- Open terminal (current_dir)
+        vim.keymap.set("n", "<leader>to", function()
             if vim.bo.buftype == "terminal" then
                 vim.cmd("hide")
                 return
@@ -46,20 +46,37 @@ return {
                 current_dir = vim.fn.getcwd()
             end
             Snacks.terminal(nil, { cwd = current_dir, id = "local_term", win = { wo = { winbar = ""}}})
-        end, { desc = "Open Terminal (current_dir)" }),
+        end, { desc = "Open Terminal" }),
 
-        -- Toggle terminal
+        -- Close terminal (hide) 
+        vim.keymap.set({"n", "t"}, "<leader>tc", function()
+            for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+                local buf = vim.api.nvim_win_get_buf(win)
+                if vim.bo[buf].buftype == "terminal" then
+                    vim.api.nvim_win_close(win, true)
+                end
+            end
+        end, { desc = "Close Terminal" }),
+
+        -- Toggle terminal (current_dir)
         vim.keymap.set({"n", "t"}, "<C-S-t>", function()
             if vim.bo.buftype == "terminal" then
-                vim.cmd("hide")
+                vim.cmd("wincmd p")
                 return
+            end
+            for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+                local buf = vim.api.nvim_win_get_buf(win)
+                if vim.bo[buf].buftype == "terminal" then
+                    vim.api.nvim_set_current_win(win)
+                    return
+                end
             end
             local current_dir = vim.fn.expand("%:p:h")
             if current_dir == "" or vim.fn.isdirectory(current_dir) == 0 then
                 current_dir = vim.fn.getcwd()
             end
             Snacks.terminal(nil, { cwd = current_dir, id = "local_term", win = { wo = { winbar = ""}}})
-        end, { desc = "Open Terminal (current_dir)" })
+        end, { desc = "Focus or Open Terminal" })
     }
 }
 
