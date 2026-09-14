@@ -1,12 +1,12 @@
---- ~/.config/hypr/modules/general.lua 
+--- ~/.config/hypr/modules/general.lua
 
 hl.config({
-	--- General
+    --- General
     general = {
         border_size = 2,
         gaps_in = 5,
         gaps_out = 10,
-		float_gaps = -1,
+        float_gaps = -1,
         gaps_workspaces = 0,
         ["col.active_border"] = "rgba(a9b1d6FF)",
         ["col.inactive_border"] = "rgba(a9b1d680)",
@@ -18,26 +18,34 @@ hl.config({
             enabled = true,
             window_gap = 20,
             monitor_gap = 20,
-            respect_gaps = true
-        }
+            respect_gaps = true,
+        },
     },
-	
-	--- Decoration
+
+    --- Decoration
     decoration = {
         rounding = 5,
         rounding_power = 2.5,
         active_opacity = 0.90,
         inactive_opacity = 0.90,
         fullscreen_opacity = 1.00,
+        dim_inactive = true,
+        dim_strength = 0.10,
         blur = {
             enabled = true,
             size = 6,
             passes = 3,
-            ignore_opacity = true
-        }
+            ignore_opacity = false,
+        },
+        glow = {
+            enabled = false,
+            range = 2,
+            color = "rgba(a9b1d6FF)",
+            color_inactive =  "rgba(a9b1d680)"
+        },
     },
-	
-	--- Input
+
+    --- Input
     input = {
         kb_layout = "us",
         kb_variant = "altgr-intl",
@@ -53,30 +61,29 @@ hl.config({
             natural_scroll = false,
             scroll_factor = 0.67,
             clickfinger_behavior = true,
-            drag_lock = true
-        }
+            drag_lock = true,
+        },
     },
-	
-	--- Group
+
+    --- Group
     group = {
-		groupbar = {enabled=false}
-	},
-		
-	--- Misc
+        groupbar = { enabled = false },
+    },
+
+    --- Misc
     misc = {
         disable_hyprland_logo = true,
         disable_splash_rendering = true,
         force_default_wallpaper = 0,
         font_family = "Noto Sans",
-		disable_watchdog_warning = true
+        disable_watchdog_warning = true,
     },
-	
-	--- Layouts
-    dwindle = {preserve_split=true},
-    master = {new_status="master"},
-    xwayland = {force_zero_scaling=true},
-	
-	--- Extra
-    binds = {window_direction_monitor_fallback=false}
-})
 
+    --- Layouts
+    dwindle = { preserve_split = true },
+    master = { new_status = "master" },
+    xwayland = { force_zero_scaling = true },
+
+    --- Extra
+    binds = { window_direction_monitor_fallback = false },
+})
