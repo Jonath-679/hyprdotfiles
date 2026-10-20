@@ -49,7 +49,7 @@ hl.bind(mainMod .. " + SHIFT + mouse_up", hl.dsp.window.move({workspace = "r-1"}
 
 --- Special workspace
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({workspace="special:magic"}))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle_magic.sh"))
 
 --- Resize Window
 hl.bind(mainMod .. " + ALT + H", hl.dsp.window.resize({x=-50, y=0, relative=true}), {repeating=true})
@@ -60,7 +60,7 @@ hl.bind(mainMod .. " + ALT + L", hl.dsp.window.resize({x=50, y=0, relative=true}
 --- Move/Resize Window | MouseScroll
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), {mouse=true})
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), {mouse=true})
-hl.bind("mouse:274", hl.dsp.window.drag(), {mouse=true})
+hl.bind(mainMod .. " + mouse:274", hl.dsp.window.drag(), {mouse=true})
 
 --- XF86
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ --limit 1"), {locked=true, repeating=true})
