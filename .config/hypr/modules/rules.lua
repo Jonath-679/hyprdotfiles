@@ -3,8 +3,8 @@
 --- General window-rules
 local common_apps = {
     "^(org.pulseaudio.pavucontrol)$", "^(xdg-desktop-portal-gtk)$", "^(nwg-look)$",
-    "^(qt6ct)$", "^(org.gnome.Loupe)$", "^(xarchiver)$", "^(mpv)$", "^(DesktopEditors)$",
-    "^(blueman-manager)$"
+    "^(qt6ct)$", "^(xarchiver)$", "^(mpv)$", "^(DesktopEditors)$",
+    "^(blueman-manager)$", "^(org.localsend.localsend_app)$"
 }
 for _, app in ipairs(common_apps) do
     hl.window_rule({name=app .. "-rule", match={class=app}, float=true, center=true, size="1280 720"})
@@ -15,7 +15,9 @@ hl.window_rule({name="waypaper-rule", match={class="^(waypaper)$"}, float=true, 
 hl.window_rule({name="calc-rule", match={class="^(org.gnome.Calculator)$"}, float=true, center=true, size="432 768"})
 hl.window_rule({match={class="^Thunar$", title="negative:.*Progress.*"}, float=true, center=true})
 hl.window_rule({name="gd-fs", match={title="^(Geometry Dash)$"}, fullscreen=true})
-hl.window_rule({ match = { title = "nvim" }, opacity = 0.9 })
+hl.window_rule({match = { title = "nvim" }, opacity = 0.9 })
+hl.window_rule({match={class="^(org.gnome.Loupe)$"}, float=true, center=true, size="1280 720", opacity="1.0 override"})
+hl.window_rule({match={class="^(org.gnome.Papers)$"}, float=true, center=true, size="1280 720", opacity="1.0 override"})
 
 --- Ignore maximize requests from all apps. You'll probably like this.
 local suppressMaximizeRule = hl.window_rule({

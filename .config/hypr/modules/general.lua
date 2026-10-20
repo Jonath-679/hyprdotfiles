@@ -26,8 +26,8 @@ hl.config({
     decoration = {
         rounding = 5,
         rounding_power = 2.5,
-        active_opacity = 0.90,
-        inactive_opacity = 0.90,
+        active_opacity = 0.85,
+        inactive_opacity = 0.85,
         fullscreen_opacity = 1.00,
         dim_inactive = true,
         dim_strength = 0.10,
@@ -35,7 +35,7 @@ hl.config({
             enabled = true,
             size = 6,
             passes = 3,
-            ignore_opacity = false,
+            ignore_opacity = true,
         },
         glow = {
             enabled = false,
