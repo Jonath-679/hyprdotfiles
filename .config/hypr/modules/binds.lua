@@ -49,7 +49,15 @@ hl.bind(mainMod .. " + SHIFT + mouse_up", hl.dsp.window.move({workspace = "r-1"}
 
 --- Special workspace
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle_magic.sh"))
+local toggle_magic_cmd = [[
+    current_workspace=$(hyprctl activewindow -j | jq -r '.workspace.name')
+    if [ "$current_workspace" = "special:magic" ]; then
+        hyprctl dispatch "hl.dsp.window.move({workspace=\"+0\"})" 
+    else
+        hyprctl dispatch "hl.dsp.window.move({workspace=\"special:magic\"})"
+    fi
+]]
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(toggle_magic_cmd))
 
 --- Resize Window
 hl.bind(mainMod .. " + ALT + H", hl.dsp.window.resize({x=-50, y=0, relative=true}), {repeating=true})
