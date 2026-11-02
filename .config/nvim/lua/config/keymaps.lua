@@ -1,5 +1,5 @@
 -- General
-vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode" })
+vim.keymap.set("i", "jj", "<ESC>", { desc = "Exit insert mode" })
 vim.keymap.set("n", "<leader>z", "<cmd>set wrap!<CR>", { desc = "Toggle line wrap" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo action" })
