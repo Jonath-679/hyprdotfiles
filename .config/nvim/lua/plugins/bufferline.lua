@@ -12,6 +12,7 @@ return {
                 right_mouse_command = function(n) Snacks.bufdelete(n) end,
 				mode = "buffers", --buffers, tabs
                 separator_style = {"", ""},
+                indicator = { style = "none" }, --icon, underline, none
 				always_show_bufferline = true,
 				offsets = {
 					{
