@@ -16,3 +16,6 @@ hl.env("XCURSOR_SIZE", "24")
 --- Electron
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
+--- Java
+hl.env("JAVA_AWT_WM_NONREPARENTING", "1")
+
