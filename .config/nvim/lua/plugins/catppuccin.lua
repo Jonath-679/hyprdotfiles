@@ -61,7 +61,7 @@ return {
 				},
 			},
 			color_overrides = {},
-			custom_highlights = {},
+			custom_highlights = {SnacksIndentScope={fg="#a9b1d6"}},
 			auto_integrations = true,
 			integrations = {
 				cmp = true,
