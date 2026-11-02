@@ -38,6 +38,21 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+-- Función para cerrar el buffer actual o salir de Neovim si es el último
+_G.smart_q = function()
+  local listed_buffers = vim.tbl_filter(function(buf)
+    return vim.bo[buf].buflisted and vim.api.nvim_buf_is_valid(buf)
+  end, vim.api.nvim_list_bufs())
+  if #listed_buffers <= 1 then
+    vim.cmd("q")
+  else
+    Snacks.bufdelete()
+  end
+end
+vim.cmd([[
+  cnoreabbrev <expr> q (getcmdtype() == ':' && getcmdline() == 'q') ? 'lua _G.smart_q()' : 'q'
+]])
+
 -- Extra
 -- vim.opt.scrolloff = 5
 -- vim.opt.sidescrolloff = 5 
