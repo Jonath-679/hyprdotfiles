@@ -23,7 +23,7 @@ return {
         smear_insert_mode = true,
 
         -- Extra
-        time_interval = 1, --ms (default 17)
+        time_interval = 17, --ms (default 17)
         cursor_color = "#a9b1d6",
 
         -- Faster
